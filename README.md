@@ -13,6 +13,10 @@ A highly-polished, RAG-powered (Retrieval-Augmented Generation) Apple customer s
 
 This project mimics a premium Apple UI design aesthetic—using pure CSS, backdrop-filter glassmorphism, and Apple-style typography—to create a smooth and satisfying user experience. Users can ask questions about Apple products, and the AI agent retrieves real, scraped Apple support documentation to answer accurately. If the AI does not know the answer, it escalates to a human specialist.
 
+
+https://github.com/user-attachments/assets/9d6cbeec-b83e-4a69-a11a-09bd215edb4e
+
+
 ## ✨ Features
 - **Premium Apple Aesthetic:** Clean UI with pure white backgrounds, Apple's exact blue (`#0071e3`), and smooth micro-animations.
 - **RAG Pipeline:** Answers are grounded in real Apple support pages using vector search.
