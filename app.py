@@ -1,13 +1,21 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify, render_template
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import Chroma
 from groq import Groq
 
+load_dotenv()  # loads variables from .env into os.environ
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 app = Flask(__name__)
-client = Groq(api_key="REMOVED_SEE_ENV_FILE")
+
+groq_api_key = os.getenv("GROQ_API_KEY")
+if not groq_api_key:
+    raise RuntimeError("GROQ_API_KEY is not set. Add it to your .env file.")
+
+client = Groq(api_key=groq_api_key)
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 db = Chroma(persist_directory="./apple_db", embedding_function=embeddings)
 
